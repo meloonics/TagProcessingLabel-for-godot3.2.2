@@ -1,0 +1,2 @@
+# TagProcessingLabel-for-godot3.2.2
+A demo for a modified RichTextLabel in Godot3.2.2, which supports {tags} and will automatically respond to changing controllers. It supports XBox, PS4 and Nintendo Switch Pro Controllers right now, but can be expanded. The singleton allows you to add your own syntax for tags. The TagProcessingLabel.tscn can be reused anywhere in your project, where displaying text along with input-icons is necessary. 
