@@ -1,0 +1,88 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://UI.gd" type="Script" id=1]
+[ext_resource path="res://TagProcessingLabel.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/wise_godot.png" type="Texture" id=3]
+
+[node name="UI" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="wise_godot" type="Sprite" parent="."]
+position = Vector2( 832, 408 )
+scale = Vector2( 6.5, 6.5 )
+texture = ExtResource( 3 )
+
+[node name="SpeechBubble" type="Polygon2D" parent="."]
+polygon = PoolVector2Array( 24, 168, 24, 384, 664, 384, 664, 328, 728, 360, 664, 272, 664, 168 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 50.0
+margin_top = 50.0
+margin_right = -50.0
+custom_constants/separation = 50
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+margin_right = 924.0
+margin_bottom = 31.0
+text = "Connect a device or simulate controller connection by pressing a button.
+You can turn off tag_processing by toggling \"Process Tags\""
+align = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 81.0
+margin_right = 924.0
+margin_bottom = 101.0
+custom_constants/separation = 100
+alignment = 1
+
+[node name="Nothing_Button" type="Button" parent="VBoxContainer/HBoxContainer"]
+margin_left = 86.0
+margin_right = 180.0
+margin_bottom = 20.0
+toggle_mode = true
+pressed = true
+text = "Process Tags"
+
+[node name="PC_Button" type="Button" parent="VBoxContainer/HBoxContainer"]
+margin_left = 280.0
+margin_right = 308.0
+margin_bottom = 20.0
+text = "PC"
+
+[node name="XBOX_Button" type="Button" parent="VBoxContainer/HBoxContainer"]
+margin_left = 408.0
+margin_right = 456.0
+margin_bottom = 20.0
+text = "XBOX"
+
+[node name="PS_Button" type="Button" parent="VBoxContainer/HBoxContainer"]
+margin_left = 556.0
+margin_right = 655.0
+margin_bottom = 20.0
+text = "PLAYSTATION"
+
+[node name="NIN_Button" type="Button" parent="VBoxContainer/HBoxContainer"]
+margin_left = 755.0
+margin_right = 837.0
+margin_bottom = 20.0
+text = "NINTENDO"
+
+[node name="TagProcessingLabel" parent="VBoxContainer" instance=ExtResource( 2 )]
+margin_top = 151.0
+margin_right = 924.0
+margin_bottom = 166.0
+[connection signal="toggled" from="VBoxContainer/HBoxContainer/Nothing_Button" to="." method="_on_Nothing_Button_toggled"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/PC_Button" to="." method="_on_PC_Button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/XBOX_Button" to="." method="_on_XBOX_Button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/PS_Button" to="." method="_on_PS_Button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/NIN_Button" to="." method="_on_NIN_Button_pressed"]

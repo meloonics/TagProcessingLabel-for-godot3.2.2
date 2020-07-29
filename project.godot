@@ -1,0 +1,30 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[  ]
+_global_script_class_icons={
+
+}
+
+[application]
+
+config/name="Processing {TAGS} using [b]BBcode[/b]"
+config/description="This is a demo of a modified RichTextLabel, which is able to change tags, such as {CONFIRM} to their related Input icons, using BBCode. The Icons change based on the connected controller. That way, if a player connects a gamepad to their PC, the dialog shows the correct input icons in dialogs, UI-Labels etc.
+Tags and Icons can be managed in a separate Singleton. That way all the information is neatly in one place."
+run/main_scene="res://UI.tscn"
+config/icon="res://icon.png"
+
+[autoload]
+
+TextProcessor="*res://TagProcessor [SINGLETON].tscn"
+
+[rendering]
+
+environment/default_environment="res://default_env.tres"
